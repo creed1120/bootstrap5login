@@ -9,7 +9,7 @@
 // import * as bootstrap from 'bootstrap';
 
 //-- You can specify which plugins you need --//
-import { Toast, Modal, Tooltip, Popover } from 'bootstrap';
+import { Toast, Modal, Tooltip, Popover, Carousel } from 'bootstrap';
 
 
 //-- Event Listener approach --//
