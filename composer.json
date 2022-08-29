@@ -1,0 +1,15 @@
+{
+    "name": "cedricreed/phpvalet",
+    "autoload": {
+        "psr-4": {
+            "Cedricreed\\Phpvalet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cedric",
+            "email": "cedricareed@gmail.com"
+        }
+    ],
+    "require": {}
+}
