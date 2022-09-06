@@ -1,5 +1,5 @@
 {
-    "name": "cedricreed/youtubewebapp",
+    "name": "cedricreed/bootstrap5login",
     "autoload": {
         "psr-4": {
             "Cedricreed\\Phpvalet\\": "src/"

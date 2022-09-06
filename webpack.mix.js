@@ -5,7 +5,7 @@ mix.js('src/js/app.js', 'js')
    .setPublicPath('dist');
    
 mix.browserSync({
-   proxy:'youtubewebapp.test',
+   proxy:'bootstrap5login.test',
    files: [
       '**/*.css',
       '**/*.js',
