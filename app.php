@@ -12,7 +12,7 @@ include_once('header.php');
 // Check if we are logged in!
 if ( ! isset($_SESSION["account"]) ) : ?>
 
-    <?php header('location: login.php') ?>
+    <?php header('Location: login.php') ?>
 
 <?php else : ?>
 
@@ -26,7 +26,8 @@ if ( ! isset($_SESSION["account"]) ) : ?>
                 </div>
             </div>
         <?php unset($_SESSION["success"]); ?>
-        <?php endif; ?>
+
+    <?php endif; ?>
 
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->

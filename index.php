@@ -1,54 +1,94 @@
 <?php
-include_once('header.php')
+/*****************
+ * 
+ * MODEL ⬇ 
+ * 
+ * ***************/
 
+include_once('header.php');
+
+// require the pdo database connection
+require_once('database/db_connect.php');
+
+// echo "<pre>";
+// $pdo = new PDO('mysql:host=127.0.0.1;dbname=loavertex', 'root', '');
+$statement = $pdo->query("SELECT id, name, email, password FROM users");
+// echo htmlentities($row['_message']);
+// while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+//     print_r($row);
+// }
+// echo "</pre>";
 ?>
 
-<header>
+<?php
+/*****************
+ * 
+ * PHP/HTML VIEW ⬇ 
+ * 
+ * ***************/
+?>
 
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080')">
-        <div class="carousel-caption">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
-        <div class="carousel-caption">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
-        <div class="carousel-caption">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</header>
+<?php
+// Check if we are logged in!
+if ( ! isset($_SESSION["account"]) ) : ?>
 
-<!-- Page Content -->
-<section class="py-5">
-  <div class="container">
-    <h1 class="fw-light">Full Page Image Slider</h1>
-    <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images
-      in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
-  </div>
-</section>
-    
-<?php include_once('footer.php') ?>
+    <?php header('Location: login.php'); ?>
+
+<?php else : ?>
+
+    <div class="container" style="margin-top:8em;">
+        <h2 class="my-3">PDO mySql Statements from DB</h2>
+    </div>
+
+    <section class="section mt-5">
+        <div class="container">
+
+            <?php if ( isset($_SESSION["error"]) ) : ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span><?php echo $_SESSION["error"]; ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php unset($_SESSION["error"]); ?>
+            <?php endif; ?>
+
+            <?php if ( isset($_SESSION["success"]) ) : ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span><?php echo $_SESSION["success"]; ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php unset($_SESSION["success"]); ?>
+            <?php endif; ?>
+
+            <div class="table-responsive">
+                <table class="table user-table m-0">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $statement->fetch(PDO::FETCH_ASSOC)) : ?>
+                            <tr>
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['name'] ?></td>
+                                <td><a href="mailto:<?php echo $row['email'] ?>" target="_blank"><?php echo $row['email'] ?></a></td>
+                                <td><?php echo $row['password'] ?></td>
+                                <td>
+                                    <a class="btn btn-warning" href="edit.php?id=<?php echo $row['id'] ?>">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="user_del.php?id=<?php echo $row['id'] ?>">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+<?php  endif; ?>
+
+<?php include_once('footer.php'); ?>

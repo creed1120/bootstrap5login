@@ -20,7 +20,7 @@ if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
         ':email' => $_POST['email'],
         ':password' => $_POST['password']));
 
-    header('location: /pdo_statements.php');
+    header('location: /index.php');
 }
 ?>
 

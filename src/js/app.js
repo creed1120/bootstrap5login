@@ -5,12 +5,11 @@
  **************************/
 
  import 'bootstrap';
-
-
+ 
 // import * as bootstrap from 'bootstrap';
 
 //-- You can specify which plugins you need --//
-import { Modal, Tooltip, Popover, Carousel } from 'bootstrap';
+// import { Modal, Tooltip, Popover, Carousel } from 'bootstrap';
 
 
 //-- Event Listener approach --//
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //   });
 });
   
-// Close popover on button click
+//Close popover on button click
 // document.addEventListener("click", function(e){
 //     if(e.target && e.target.classList.contains("close")){
 //         var popover = Popover.getInstance(e.target.closest(".popover"));

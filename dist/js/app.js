@@ -3205,8 +3205,8 @@ __webpack_require__.r(__webpack_exports__);
  **************************/
  // import * as bootstrap from 'bootstrap';
 //-- You can specify which plugins you need --//
-
- //-- Event Listener approach --//
+// import { Modal, Tooltip, Popover, Carousel } from 'bootstrap';
+//-- Event Listener approach --//
 
 document.addEventListener("DOMContentLoaded", function () {// var alertEl = document.getElementById("myToast");
   // var myAlert = new Alert(alertEl);
@@ -3222,7 +3222,7 @@ document.addEventListener("DOMContentLoaded", function () {// var alertEl = docu
   //  var tooltipList = tooltipTriggerList.map(function(element){
   //      return new Tooltip(element);
   //   });
-}); // Close popover on button click
+}); //Close popover on button click
 // document.addEventListener("click", function(e){
 //     if(e.target && e.target.classList.contains("close")){
 //         var popover = Popover.getInstance(e.target.closest(".popover"));

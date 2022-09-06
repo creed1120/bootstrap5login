@@ -9,7 +9,7 @@ include_once('header.php');
 
 if ( isset($_POST["account"]) && isset($_POST["pw"]) ) {
     unset($_SESSION["account"]);  // Logout current user
-    if ( $_POST['pw'] == 'sgwerhserge' ) {
+    if ( $_POST['pw'] == 'srgrthrth' ) {
         $_SESSION["account"] = $_POST["account"];
         $_SESSION["success"] = "You have been logged in successfully!";
         header( 'Location: app.php' );
