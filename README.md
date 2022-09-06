@@ -1,1 +1,1 @@
-# 🤓 Vanilla PHP Login flow with Bootstrap 5.2 and SESSION Auth.
+# 🤓 Vanilla PHP Login flow with Bootstrap 5.2 and $_SESSION Auth.
