@@ -1,1 +1,1 @@
-# Laravel Mix workflow with Bootstrap 5.0.2
+# Vinalla PHP Login flow with Boostrap 5.x
