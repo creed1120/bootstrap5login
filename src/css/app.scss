@@ -1,5 +1,84 @@
 // Variable overrides first
-$primary: #e61ba9;
-$danger: #470a07;
-
+$white: #ffffff;
+// Set website theme colors
+$theme-colors: (
+    "light":      #d8daea,
+    "dark":       #0b0e29,
+    "primary":    #013785,
+    "secondary":  #886452,
+    "info":       #f26036,
+    "success":    #019d59,
+    "warning":    #e0c901,
+    "danger":     #d83c2a,
+);
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway&display=swap');
+// Import Boostrap sass
 @import "~bootstrap/scss/bootstrap";
+
+// Custom SASS
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+
+    .masthead-heading {
+        font-size: 2.75rem;
+        line-height: 2.75rem;
+    }
+
+    .masthead-subheading {
+        font-size: 1.25rem;
+    }
+
+    .masthead-avatar {
+        width: 15rem;
+    }
+}
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+body {
+    .nav-link {
+        color: $dark;
+    }
+    i {
+        font-size: 1.5em;
+    }
+    .user-table tr td {
+        vertical-align: middle;
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+    }
+    div, p {
+        font-family: 'Raleway', sans-serif;
+    }
+    span {
+        display: block;
+    }   
+
+}
+
+@media (min-width:320px) {
+    .page-forms .btn {
+        width: 100%;
+    }
+}
+@media (min-width:801px) {
+    .page-forms .btn {
+        width: 25%;
+    }
+}

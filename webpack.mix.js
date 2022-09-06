@@ -5,7 +5,7 @@ mix.js('src/js/app.js', 'js')
    .setPublicPath('dist');
    
 mix.browserSync({
-   proxy:'phpvalet.test',
+   proxy:'youtubewebapp.test',
    files: [
       '**/*.css',
       '**/*.js',

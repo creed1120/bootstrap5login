@@ -1,5 +1,5 @@
 {
-    "name": "cedricreed/phpvalet",
+    "name": "cedricreed/youtubewebapp",
     "autoload": {
         "psr-4": {
             "Cedricreed\\Phpvalet\\": "src/"
@@ -11,5 +11,7 @@
             "email": "cedricareed@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twbs/bootstrap-icons": "^1.9"
+    }
 }
