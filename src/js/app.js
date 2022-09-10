@@ -4,7 +4,8 @@
  * 
  **************************/
 
- import 'bootstrap';
+import './_custom';
+import 'bootstrap';
  
 // import * as bootstrap from 'bootstrap';
 

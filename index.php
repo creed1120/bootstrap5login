@@ -55,11 +55,11 @@ if ( isset($_POST['name']) && isset($_POST['email'])
 ?>
 
 <?php
-/*****************
+/*******************
  * 
  * PHP/HTML VIEW ⬇ 
  * 
- * ***************/
+ * *****************/
 ?>
 
 <?php
@@ -71,11 +71,28 @@ if ( ! isset($_SESSION["account"]) ) : ?>
 <?php else : ?>
 
     <div class="container" style="margin-top:8em;">
-        <h2 class="my-3">PDO mySql Statements from DB</h2>
+        <h2 id="form-h1" class="my-3">PDO mySql Statements from DB</h2>
     </div>
 
     <section class="section mt-5">
         <div class="container">
+
+                <!--// SHOW FLASH MESSAGES IF PASSED IN ($_SESSION) //-->
+                <?php if ( isset($_SESSION["error"]) ) : ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <span><?php echo $_SESSION["error"]; ?></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php unset($_SESSION["error"]); ?>
+                <?php endif; ?>
+
+                <?php if ( isset($_SESSION["success"]) ) : ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span><?php echo $_SESSION["success"]; ?></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php unset($_SESSION["success"]); ?>
+                <?php endif; ?>
 
             <div class="table-responsive">
                 <table class="table user-table m-0">
@@ -107,24 +124,6 @@ if ( ! isset($_SESSION["account"]) ) : ?>
             </div>
 
             <div class="form-wrapper my-5">
-
-                <!--// SHOW FLASH MESSAGES IF PASSED IN ($_SESSION) //-->
-                <?php if ( isset($_SESSION["error"]) ) : ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <span><?php echo $_SESSION["error"]; ?></span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php unset($_SESSION["error"]); ?>
-                <?php endif; ?>
-
-                <?php if ( isset($_SESSION["success"]) ) : ?>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <span><?php echo $_SESSION["success"]; ?></span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php unset($_SESSION["success"]); ?>
-                <?php endif; ?>
-
                 <div class="row g-0">
                     <div class="col-lg-4">
                         <form method="post" enctype="multipart/form-data">

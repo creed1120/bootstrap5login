@@ -1,5 +1,7 @@
 // Variable overrides first
 $white: #ffffff;
+$primary: rgb(193, 47, 120);
+
 // Set website theme colors
 $theme-colors: (
     "light":      #d8daea,
@@ -13,6 +15,7 @@ $theme-colors: (
 );
 // Import Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway&display=swap');
+
 // Import Boostrap sass
 @import "~bootstrap/scss/bootstrap";
 
@@ -68,8 +71,50 @@ body {
     }
     span {
         display: block;
-    }   
+    }  
+     
+    a {
+        text-decoration: none;
+    }
+    .hone {
+        display: inline-block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    .container {
+        position: relative;
+        overflow: hidden;
+    }
+    #text-wrapper {
+        position: relative;
+    }
+    #form-block {
+        position: relative;
+        z-index: 2;
+    }
+    #mobile-form-block {
+        position: relative;
+        overflow: hidden;
+    }
+    .the-box {
+        display: block;
+        padding: 10px;
+        position: absolute;
+        transform: translate(-200px,0);
+        left: 0;
+        width: 200px;
+        height: 150px;
+        background-color: dodgerblue;
+        box-shadow: -3px 0px 10px #444;
+        transition: transform .2s;
+    }
 
+    .mystyle {
+        transform: translate(0,0);
+        /* width: calc(200px + 50px);
+        height: calc(50px + 100px); */
+    }
 }
 
 @media (min-width:320px) {

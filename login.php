@@ -9,7 +9,7 @@ include_once('header.php');
 
 if ( isset($_POST["account"]) && isset($_POST["pw"]) ) {
     unset($_SESSION["account"]);  // Logout current user
-    if ( $_POST['pw'] == 'srgrthrth' ) {
+    if ( $_POST['pw'] == 'F00tb@ll1120' ) {
         $_SESSION["account"] = $_POST["account"];
         $_SESSION["success"] = "You have been logged in successfully!";
         header( 'Location: app.php' );
@@ -51,8 +51,8 @@ if ( ! isset($_SESSION["account"]) ) : ?>
             <?php unset($_SESSION["success"]); ?>
             <?php endif; ?>
 
-            <div class="row m-auto">
-                <div class="p-5 col-12 col-lg-6 order-2 order-lg-1 bg-dark">
+            <div id="mobile-form-block" class="row m-auto">
+                <div id="form-block" class="p-5 col-12 col-lg-6 order-2 order-lg-1 bg-dark">
                     <!-- <h3 class="text-white">Add New User</h3> -->
                     <form method="post">
                         <div class="form-floating mb-3">
@@ -66,9 +66,17 @@ if ( ! isset($_SESSION["account"]) ) : ?>
                         <input class="btn btn-warning" type="submit" value="Login">
                     </form>
                 </div>
-                <div class="p-5 bg-warning text-dark col-12 col-lg-6 order-1 order-lg-2 align-self-stretch">
-                    <h2>User Login</h2>
+                <div id="text-wrapper" class="p-5 bg-warning text-dark col-12 col-lg-6 order-1 order-lg-2 align-self-stretch">
+                    <h2 id="form-h1">User Login</h2>
+
+                    <!-- Javascript Options Flyour -->
+                    <div id="the-box" class="the-box">
+                        <a href="http://nike.com" target="_blank" class="btn btn-primary w-100">Visit Nike.com Today</a>
+                    </div>
+
                     <p>Logins in a user that is found in the database.</p>
+                    
+                    <a class="hone" href="#">View Options</a>
                 </div>
             </div>
         </div>

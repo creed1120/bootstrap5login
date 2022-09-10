@@ -1,8 +1,8 @@
 <?php
 // $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=loavertex', 'root', '');
-$dsn = 'mysql:host=127.0.0.1;dbname=youtubewebapp';
+$dsn = 'mysql:host=127.0.0.1;dbname=bootstrap5login';
 $user = 'root';
-$password = '';
+$password = 'F00tb@ll1120';
 
 $options = [
     PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
