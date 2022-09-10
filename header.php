@@ -76,7 +76,7 @@ session_start();
                 <div class="dropdown-holder d-flex flex-column justify-content-center p-3">
                     <li><a class="dropdown-item inline-flex align-items-center" href="/app.php"><i class="bi bi-person me-2"></i>My Account</a></li>
                     <li><a class="dropdown-item inline-flex align-items-center" href="/settings.php"><i class="bi bi-sliders2 me-2"></i>Settings</a></li>
-                    <li><a class="dropdown-item inline-flex align-items-center" href="/user_add.php"><i class="bi bi-person-plus me-2"></i>Add User</a></li>
+                    <li><a class="dropdown-item inline-flex align-items-center" href="/add.php"><i class="bi bi-person-plus me-2"></i>Add User</a></li>
                     <li><a class="dropdown-item inline-flex align-items-center" href="/index.php"><i class="bi bi-person-video2 me-2"></i>View Users</a></li>
                     <li class="mt-3"><a class="w-100 btn btn-warning" type="submit" href="/logout.php"><i class="bi bi-box-arrow-left me-2"></i>Logout</a></li>
                 </div>

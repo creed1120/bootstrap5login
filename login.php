@@ -34,12 +34,21 @@ if ( ! isset($_SESSION["account"]) ) : ?>
     <section class="page-forms d-flex justify-content-center align-items-center vh-100 vw-100">
         <div class="container">
     
+            <!--// SHOW FLASH MESSAGES IF PASSED IN ($_SESSION) //-->
             <?php if ( isset($_SESSION["error"]) ) : ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <span><?php echo $_SESSION["error"]; ?></span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php unset($_SESSION["error"]); ?>
+            <?php endif; ?>
+
+            <?php if ( isset($_SESSION["success"]) ) : ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span><?php echo $_SESSION["success"]; ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php unset($_SESSION["success"]); ?>
             <?php endif; ?>
 
             <div class="row m-auto">

@@ -105,6 +105,7 @@ if ( !isset($_SESSION["account"]) ) : ?>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id ?>">
                         <button type="submit" class="btn btn-warning">Update</button>
+                        <a href="index.php" type="submit" class="btn btn-danger">Cancel</a>
                     </form>
                 </div>
                 <div class="p-5 bg-warning text-dark col-12 col-lg-6 order-1 order-lg-2 align-self-stretch">
